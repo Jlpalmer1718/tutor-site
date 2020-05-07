@@ -3,13 +3,19 @@ const express = require('express')
 // Creating express app for server
 const app = express()
 // Creating a variable that will set the port of my server to 5000
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
+//Telling express app to use express.static() method in order to stage my client folder
+const Joi = require('joi');
+const userdata = require("./customers.json");
+const customers = userdata.customers;
+
+app.use(express.static("public"))
 
 app.get("/", (req, res) => {
     res.send('Welcome to website')
 })
 //tutors
-const tutors = require('/Users/quintonhbrown/Desktop/tutor-site/public/scripts/tutor-profiles.json')
+const tutors = require('./tutor-profiles.json')
 //API that will be getting all of my tutors in my tutor-profiles.json
 app.get("/courses", (req, res) => {
     if (!tutors) {
@@ -19,39 +25,105 @@ app.get("/courses", (req, res) => {
     res.send(tutors)
 })
 //API that will be getting technical tutor from my tutor-profiles.json
-app.get('/courses/technical', (req, res) => {
-    if (!X) {
+app.get('/courses/:subject', (req, res) => {
+    if (!tutors) {
         return res.status(404).send("Resource is not found. Please try again")
     }
-        
-    res.send(X)
-})
-//API that will be getting financial-literacy tutor from my tutor-profiles.json
-app.get('/courses/financial-literacy', (req, res) => {
-    if (!X) {
-        return res.status(404).send("Resource is not found. Please try again")
-    }
-        
-    res.send(X)
-})
-//API that will be getting human-anatomy tutor from my tutor-profiles.json
-app.get('/courses/human-anatomy', (req, res) => {
-    if (!X) {
-        return res.status(404).send("Resource is not found. Please try again")
-    }
-        
-    res.send(X)
-})
-//API that will be getting nutrition tutor from my tutor-profiles.json
-app.get('/courses/nutrition', (req, res) => {
-    if (!X) {
-        return res.status(404).send("Resource is not found. Please try again")
-    }
-        
-    res.send(X)
+    const tutor = tutors.find(tutor => tutor.subject === req.params.subject)
+    
+    res.send(tutor)
 })
 
+app.get('/customers', (req, res) =>{
+    if (!customers){
+         return res.status(404).send("Customer were not found")
+    }
 
+    res.send(customers)
+})
+
+app.get('/customers/:id', (req, res) => {
+
+    const idData = customers.find(function(customers){
+        return parseInt(req.params.id) === customers.id
+    })
+    if (!idData){
+        return res.status(404).send("Customer ID was not found");
+    }
+
+    res.send(idData)
+});
+
+app.post('/customers', (req, res) => {
+    //Validate
+const {error} = validateCustomer(req.body);
+
+//return error if invalid
+if (error){
+    res.status(400).send(error.details[0].message);
+    return;
+}
+    
+const newCustomer = {
+    id: customers.length + 1,
+    fullName: req.body.fullName,
+    email: req.body.email,
+    password: req.body.password
+};
+customers.push(newCustomer);
+res.send(customers);
+});
+
+app.put('/customers/:id', (req, res)=>{
+//find ID
+    const idData = customers.find(function(customers){
+        return parseInt(req.params.employeeID) === employees.employeeID
+    })
+    if (!idData){
+        return res.status(404).send("Customer ID was not found");
+    }
+//Validate
+const {error} = validateCustomer(req.body);
+
+//return error if invalid
+if (error){
+    res.status(400).send(error.details[0].message);
+    return;
+}
+//update ID
+idData.fullName = req.body.fullName;
+idData.email = req.body.email;
+idData.password = req.body.password;
+
+res.send(idData)
+});
+
+app.delete('/customers/:id', (req, res) => {
+//Look up employee
+const idData = customers.find(function(customers){
+    return parseInt(req.params.id) === customers.id
+})
+//return error if not found
+if (!idData){
+    return res.status(404).send("Customer ID was not found");
+}
+//delete
+const index = customers.indexOf(idData);
+customers.splice(index, 1);
+res.send(customers);
+
+});
+
+
+function validateCustomer(customers){
+    const schema = {
+        fullName: Joi.string().min(3).required(),
+        email: Joi.string().min(3).required(),
+        password: Joi.number().min(3).required()
+    };
+    return  Joi.validate(customers, schema);
+    
+}
 // App is running on port 3000
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
