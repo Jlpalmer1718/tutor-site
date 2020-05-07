@@ -2,7 +2,7 @@ header{
     background-color: white;
     margin: 0;
     padding: 0;
-    height: 10rem;
+    height: 13rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,12 +30,12 @@ header{
 
 .nav{
 width:100%;
-height:3rem;
+height:50px;
 background-color:$cyan;
 display: flex;
 flex-direction: row;
 justify-content: flex-end;
-padding-bottom: 12px;
+// padding-bottom: 12px;
 
 
     &_current{
@@ -58,14 +58,18 @@ padding-bottom: 12px;
 }
 
 .nav_ul{
+    // padding: 15px;
     display:flex;
     flex-direction: row;
     justify-content: space-around;
     list-style: none;
 
     li{
-        margin-top: 30px;
-        font-size: 4rem;
+        // margin-top: 10px;
+        padding: 15px;
+        font-size: 20px;
+        
+
     
     }
         .nav_link{
@@ -80,21 +84,7 @@ padding-bottom: 12px;
     
 }
 
-.drop-down{
-    position: absolute;
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    list-style: none;
-    background-color: $darkpurple;
-    margin: 10px;
-    padding: 0px 10px 10px 10px;
-    color:$lightyellow;
-    border: solid 3px $lightpurple;
-    border-bottom-left-radius:15px;
-    border-bottom-right-radius:15px;
-    border-top-right-radius:15px;
-}
+
 
 
 

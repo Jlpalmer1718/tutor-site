@@ -2,7 +2,7 @@ header {
   background-color: white;
   margin: 0;
   padding: 0;
-  height: 10rem;
+  height: 13rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,7 +47,7 @@ header {
 
 .nav {
   width: 100%;
-  height: 3rem;
+  height: 50px;
   background-color: #1d2738;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,7 +59,6 @@ header {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding-bottom: 12px;
 }
 
 .nav_current {
@@ -92,8 +91,8 @@ header {
 }
 
 .nav_ul li {
-  margin-top: 30px;
-  font-size: 4rem;
+  padding: 15px;
+  font-size: 20px;
 }
 
 .nav_ul .nav_link {
@@ -103,26 +102,6 @@ header {
 
 .nav_ul .nav_link:hover {
   background-color: #030030;
-}
-
-.drop-down {
-  position: absolute;
-  display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  list-style: none;
-  background-color: #030030;
-  margin: 10px;
-  padding: 0px 10px 10px 10px;
-  color: #eeca00e1;
-  border: solid 3px #ff024e;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  border-top-right-radius: 15px;
 }
 
 .footer {
@@ -144,26 +123,7 @@ header {
   width: 40px;
 }
 
-.slideshow {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 500px 50px;
-      grid-template-rows: 500px 50px;
-  -ms-grid-columns: 5% 90% 5%;
-      grid-template-columns: 5% 90% 5%;
-}
-
-.arrow {
-  color: #eeca00e1;
-  background-color: #ff024e;
-  font-size: 30px;
-}
-
 .bottom_slideshow {
-  background-color: #ff024e;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1/4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -176,7 +136,7 @@ header {
 }
 
 .bottom_slideshow .dots {
-  background-image: radial-gradient(#eeca00e1 20%, #ff024e 20%);
+  color: #eeca00e1;
   height: 20px;
   width: 20px;
 }
@@ -213,7 +173,7 @@ header {
 }
 
 .form-sign-up {
-  background-color: #eeca00e1;
+  background-color: #d1b7234d;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -274,6 +234,7 @@ header {
 }
 
 .container-three {
+  padding: 100px;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: auto;
@@ -351,7 +312,6 @@ header {
 }
 
 .bg-dullblue {
-  background-color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -369,11 +329,10 @@ header {
   font-size: 20px;
   color: #030030;
   line-height: 35px;
-  border: solid 2px #030030;
+  border: none;
 }
 
 .bg-lightblue {
-  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -391,7 +350,7 @@ header {
   font-size: 20px;
   color: #030030;
   line-height: 35px;
-  border: solid 2px #030030;
+  border: none;
 }
 
 .header {
@@ -404,22 +363,24 @@ header {
   width: 200px;
   border-top-left-radius: 45px;
   border-bottom-right-radius: 15px;
-  border: solid 4px #030030;
+  border: solid 2px #030030;
   margin: 15px;
 }
 
 .course_link {
   text-decoration: none;
-  color: #ff024e;
-  border: solid 2px #030030;
+  color: black;
+  border: none;
   padding: 10px;
   background-color: #eeca00e1;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
+  width: 80px;
+  font-size: 15px;
+  margin: 5px;
 }
 
 .body {
-  background-color: white;
   display: -ms-grid;
   display: grid;
 }

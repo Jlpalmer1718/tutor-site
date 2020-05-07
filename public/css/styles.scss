@@ -24,7 +24,7 @@ $dullblue:black;
     overflow: hidden;
 }
 .bg-dullblue{
-    background-color: $dullblue;
+
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -33,11 +33,11 @@ $dullblue:black;
     font-size:20px;
     color:$darkpurple;
     line-height: 35px;
-    border: solid 2px $darkpurple;
+    border: none;
 }
 
 .bg-lightblue{
-    background-color: $lightblue;
+ 
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -46,7 +46,7 @@ $dullblue:black;
     font-size:20px;
     color:$darkpurple;
     line-height: 35px;
-    border: solid 2px $darkpurple;
+    border: none;
 }
 
 .header{
@@ -59,21 +59,23 @@ $dullblue:black;
     width: 200px;
     border-top-left-radius: 45px;
     border-bottom-right-radius: 15px;
-    border:solid 4px $darkpurple;
+    border:solid 2px $darkpurple;
     margin: 15px;
 }
 
 .course_link{
     text-decoration: none;
-    color:$lightpurple;
-    border:solid 2px $darkpurple;
+    color:black;
+    border:none;
     padding:10px;
     background-color: $lightyellow;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
+    width: 80px;
+    font-size: 15px;
+    margin: 5px;
 }
 
 .body{
-    background-color: $lightblue;
     display:grid;
 }
