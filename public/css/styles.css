@@ -1,21 +1,81 @@
+header {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  height: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo {
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 200px;
+}
+
+.userLinks ul {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 5rem;
+  list-style: none;
+}
+
+.userLinks ul li {
+  padding: 5px;
+}
+
 .nav {
   width: 100%;
-  height: 100px;
-  background-color: #1fabcf;
+  height: 3rem;
+  background-color: #1d2738;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-bottom: 12px;
 }
 
 .nav_current {
-  border: solid 6px #2b009c;
+  background-color: #030030;
   padding: 10px;
-  border-top-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-top-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  opacity: .5;
+  height: 2rem;
 }
 
 .nav_not_current {
-  border: solid 3px #413c4f;
+  border: none #ff024e;
   padding: 10px;
-  border-top-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-top-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 .nav_ul {
@@ -33,16 +93,16 @@
 
 .nav_ul li {
   margin-top: 30px;
-  font-size: 23px;
+  font-size: 4rem;
 }
 
-.nav_ul li .nav_link {
+.nav_ul .nav_link {
   text-decoration: none;
-  color: #f3fcc7;
+  color: #eeca00e1;
 }
 
-.nav_ul li .nav_link:hover {
-  background-color: #2b009c;
+.nav_ul .nav_link:hover {
+  background-color: #030030;
 }
 
 .drop-down {
@@ -55,11 +115,11 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   list-style: none;
-  background-color: #2b009c;
+  background-color: #030030;
   margin: 10px;
   padding: 0px 10px 10px 10px;
-  color: #f3fcc7;
-  border: solid 3px #413c4f;
+  color: #eeca00e1;
+  border: solid 3px #ff024e;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
@@ -68,7 +128,7 @@
 .footer {
   width: 100%;
   height: 100px;
-  background-color: #1fabcf;
+  background-color: #1d2738;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -94,13 +154,13 @@
 }
 
 .arrow {
-  color: #f3fcc7;
-  background-color: #413c4f;
+  color: #eeca00e1;
+  background-color: #ff024e;
   font-size: 30px;
 }
 
 .bottom_slideshow {
-  background-color: #413c4f;
+  background-color: #ff024e;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
@@ -116,13 +176,13 @@
 }
 
 .bottom_slideshow .dots {
-  background-image: radial-gradient(#f3fcc7 20%, #413c4f 20%);
+  background-image: radial-gradient(#eeca00e1 20%, #ff024e 20%);
   height: 20px;
   width: 20px;
 }
 
 .bottom_slideshow .dots_current {
-  background-image: radial-gradient(#f3fcc7 40%, #413c4f 20%);
+  background-image: radial-gradient(#eeca00e1 40%, #ff024e 20%);
 }
 
 .image {
@@ -131,7 +191,7 @@
 }
 
 .body {
-  background-color: #c7fffc;
+  background-color: white;
   display: -ms-grid;
   display: grid;
 }
@@ -153,7 +213,7 @@
 }
 
 .form-sign-up {
-  background-color: #f3fcc7;
+  background-color: #eeca00e1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,15 +228,15 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 50px 70px 50px 70px;
-  -webkit-box-shadow: 2px 3px #2b009c;
-          box-shadow: 2px 3px #2b009c;
+  -webkit-box-shadow: 2px 3px #030030;
+          box-shadow: 2px 3px #030030;
   margin-top: 50px;
   margin-bottom: 80px;
 }
 
 .input-text {
   margin: 15px;
-  color: #2b009c;
+  color: #030030;
   font-size: 25px;
   height: 35px;
   border-radius: 10%;
@@ -184,30 +244,30 @@
 
 .head {
   margin: 30px 0px 20px 0px;
-  color: #2b009c;
+  color: #030030;
   font-size: 65px;
 }
 
 .label {
-  color: #2b009c;
+  color: #030030;
   font-size: 25px;
 }
 
 .button {
   margin: 10px;
-  color: #2b009c;
+  color: #030030;
   font-size: 25px;
-  background-color: #c7fffc;
+  background-color: white;
   padding: 25px;
-  -webkit-box-shadow: 2px 3px #2b009c;
-          box-shadow: 2px 3px #2b009c;
+  -webkit-box-shadow: 2px 3px #030030;
+          box-shadow: 2px 3px #030030;
   border-radius: 10%;
 }
 
 .message {
   resize: none;
   margin: 25px;
-  color: #2b009c;
+  color: #030030;
   font-size: 25px;
   height: 105px;
   border-radius: 10%;
@@ -229,7 +289,7 @@
 }
 
 .bg-dullblue {
-  background-color: #edfbff;
+  background-color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -245,13 +305,13 @@
           align-items: center;
   padding: 30px;
   font-size: 20px;
-  color: #2b009c;
+  color: #030030;
   line-height: 35px;
-  border: solid 2px #2b009c;
+  border: solid 2px #030030;
 }
 
 .bg-lightblue {
-  background-color: #c7fffc;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -267,9 +327,9 @@
           align-items: center;
   padding: 30px;
   font-size: 20px;
-  color: #2b009c;
+  color: #030030;
   line-height: 35px;
-  border: solid 2px #2b009c;
+  border: solid 2px #030030;
 }
 
 .header {
@@ -281,22 +341,22 @@
   width: 200px;
   border-top-left-radius: 45px;
   border-bottom-right-radius: 15px;
-  border: solid 4px #2b009c;
+  border: solid 4px #030030;
   margin: 15px;
 }
 
 .course_link {
   text-decoration: none;
-  color: #413c4f;
-  border: solid 2px #2b009c;
+  color: #ff024e;
+  border: solid 2px #030030;
   padding: 10px;
-  background-color: #f3fcc7;
+  background-color: #eeca00e1;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
 
 .body {
-  background-color: #c7fffc;
+  background-color: white;
   display: -ms-grid;
   display: grid;
 }
